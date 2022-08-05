@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import date
 
-aniversariantes = pd.read_excel('Program/Planilhas/LISTA DE RG CPF CLIENTES.xlsx')
+aniversariantes = pd.read_excel('Planilhas/LISTA DE RG CPF CLIENTES.xlsx', engine='openpyxl')
 aniversariantes['DATA DE NASCIMENTO'] = pd.to_datetime(aniversariantes['DATA DE NASCIMENTO'], errors='coerce').dt.date
 nascimento = []
 
@@ -33,7 +33,7 @@ def Encontrar_Aniversariante():
         linha +=1
     df = pd.DataFrame(aniv_do_dia, columns=['NOME'])
 
-    df.to_excel('Program/Planilhas/planilhas_do_sistema/aniversariantes do dia.xlsx', index=False, sheet_name=f'Aniversariantes do dia')
+    df.to_excel('Planilhas/planilhas_do_sistema/aniversariantes do dia.xlsx', index=False, sheet_name=f'Aniversariantes do dia')
 
 
 

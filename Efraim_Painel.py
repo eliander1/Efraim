@@ -1,5 +1,6 @@
 from tkinter import *
-from Program.Buttons.Botao import Atualizar
+from Botao import Atualizar
+
 
 # INTERFACE
 

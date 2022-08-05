@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import date
 
-passageiros_em_transito = pd.read_excel('Program/Planilhas/Efraimtur_Passageiros em  trânsito.xlsx')
+passageiros_em_transito = pd.read_excel('Planilhas/Efraimtur_Passageiros em  trânsito.xlsx', engine='openpyxl')
 pd.set_option('display.max_columns', 100)
 
 
@@ -18,7 +18,7 @@ def Check_in_Aberto():
             passageiros.append(passageiro)
 
     df = pd.DataFrame(passageiros, columns=['DATA DE EMBARQUE', 'CIA / LOCALIZADOR', 'PASSAGEIRO'])
-    df.to_excel('Program/Planilhas/planilhas_do_sistema/checkin_aberto.xlsx', index=False, sheet_name='Checkin Aberto2')
+    df.to_excel('Planilhas/planilhas_do_sistema/checkin_aberto.xlsx', index=False, sheet_name='Checkin Aberto2')
 
 
 
