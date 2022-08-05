@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+VERSION
+requirements.txt
+setup.py
+efraimbot/__init__.py
+efraimbot/__main__.py
+efraimbot/bot.py
+efraimbot.egg-info/PKG-INFO
+efraimbot.egg-info/SOURCES.txt
+efraimbot.egg-info/dependency_links.txt
+efraimbot.egg-info/requires.txt
+efraimbot.egg-info/top_level.txt
+efraimbot/resources/start.png
