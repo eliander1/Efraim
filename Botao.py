@@ -8,7 +8,6 @@ def Atualizar ():
     aniv.Encontrar_Aniversariante()
     sleep(1.5)
     pet.Check_in_Aberto()
-    # sleep(1.5)
-    # Bot.main()
+
 
 

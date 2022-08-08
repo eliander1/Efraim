@@ -1,13 +1,32 @@
-
-
+import os
+import sys
 from botcity.core import DesktopBot
 from time import sleep
 
 class Bot(DesktopBot):
+
+    def setup_images(self):
+        if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+            # Remember to change here from `botPython` to your bot ID.
+            res_path = os.path.join(sys._MEIPASS, "efraimbot", "resources")
+            # Add all images needed to the image map
+            self.add_image("atualizar", os.path.join(res_path, "atualizar.png"))
+            self.add_image("entendi", os.path.join(res_path, "entendi.png"))
+            self.add_image("play_painel", os.path.join(res_path, "play_painel.png"))
+            self.add_image("publicar", os.path.join(res_path, "publicar.png"))
+            self.add_image("salvar_alteracoes", os.path.join(res_path, "salvar_alteracoes.png"))
+            self.add_image("selecionar_workspace", os.path.join(res_path, "selecionar_workspace.png"))
+            self.add_image("substituir_painel", os.path.join(res_path, "substituir_painel.png"))
+
+
     def action(self, execution=None):
         # Fetch the Activity ID from the task:
         # task = self.maestro.get_task(execution.task_id)
         # activity_id = task.activity_id
+
+
+        self.setup_images()
+
 
         # Opens the BotCity website.
         self.execute(r'C:\Users\eliander\Desktop\Efraim_painel.pbix')
@@ -63,9 +82,6 @@ class Bot(DesktopBot):
         if not self.find( "play_painel", matching=0.97, waiting_time=10000):
             self.not_found("play_painel")
         self.click(1)
-         
-        
-        
 
         # Uncomment to mark this task as finished on BotMaestro
         # self.maestro.finish_task(
@@ -76,7 +92,6 @@ class Bot(DesktopBot):
 
     def not_found(self, label):
         print(f"Element not found: {label}")
-
 
 if __name__ == '__main__':
     Bot.main()
