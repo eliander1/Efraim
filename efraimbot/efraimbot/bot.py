@@ -2,6 +2,8 @@ import os
 import sys
 from botcity.core import DesktopBot
 from time import sleep
+import logging
+logger = logging.getLogger(__name__)
 
 class Bot(DesktopBot):
 
@@ -20,16 +22,15 @@ class Bot(DesktopBot):
 
 
     def action(self, execution=None):
+        logger.info("Iniciando o Bot...")
         # Fetch the Activity ID from the task:
         # task = self.maestro.get_task(execution.task_id)
         # activity_id = task.activity_id
 
-
         self.setup_images()
 
-
         # Opens the BotCity website.
-        self.execute(r'C:\Users\eliander\Desktop\Efraim_painel.pbix')
+        self.execute(r'Efraim_painel.pbix')
 
         sleep(15)
 
@@ -48,15 +49,8 @@ class Bot(DesktopBot):
 
         sleep(10)
 
-        #Salvar alteracoes
-        if not self.find( "salvar_alteracoes", matching=0.97, waiting_time=10000):
-            self.not_found("salvar_alteracoes")
-        self.click(1)
-
-        sleep(4)
-
-        #selecionar workspace
-        if not self.find( "selecionar_workspace", matching=0.97, waiting_time=10000):
+        # selecionar workspace
+        if not self.find("selecionar_workspace", matching=0.97, waiting_time=10000):
             self.not_found("selecionar_workspace")
         self.click(1)
 
@@ -74,6 +68,10 @@ class Bot(DesktopBot):
         self.click(1)
 
         sleep(5)
+
+        self.alt_f4()
+
+        sleep(2)
 
         self.execute(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
 

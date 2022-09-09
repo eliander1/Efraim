@@ -11,4 +11,11 @@ efraimbot.egg-info/SOURCES.txt
 efraimbot.egg-info/dependency_links.txt
 efraimbot.egg-info/requires.txt
 efraimbot.egg-info/top_level.txt
+efraimbot/resources/atualizar.png
+efraimbot/resources/entendi.png
+efraimbot/resources/play_painel.png
+efraimbot/resources/publicar.png
+efraimbot/resources/salvar_alteracoes.png
+efraimbot/resources/selecionar_workspace.png
 efraimbot/resources/start.png
+efraimbot/resources/substituir_painel.png
